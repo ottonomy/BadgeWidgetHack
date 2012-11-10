@@ -1,3 +1,28 @@
+<?php
+
+function badgewidgethack_convert_email_to_openbadges_id($email) {
+	$postdata = http_build_query(
+	    array(
+	        'email' => $email
+	    )
+	);
+
+	$opts = array('http' =>
+	    array(
+	        'method'  => 'POST',
+	        'header'  => 'Content-type: application/x-www-form-urlencoded',
+	        'content' => $postdata
+	    )
+	);
+
+	$context  = stream_context_create($opts);
+	$emailjson = file_get_contents('http://beta.openbadges.org/displayer/convert/email', false, $context);
+	$emaildata = json_decode($emailjson);
+	return $emaildata->userId;
+}
+
+?>
+
 <html>
 <body>
 <img src="./bwh.png" align="right" />
@@ -7,7 +32,7 @@ Next, choose the group of badges you want to display in your widget.
 <br />
 
 <?php
-$user = $_POST["user"];
+$user = badgewidgethack_convert_email_to_openbadges_id($_POST['email']);
 $url = "http://beta.openbadges.org/displayer/" . $user . "/groups.json";
 $json = file_get_contents($url);
 $data = json_decode($json,true);

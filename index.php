@@ -5,11 +5,7 @@
 
 <p>Have you got some badges you want to display on your blog or somewhere else online? BadgeWidgetHack to the rescue!</p>
 
-<p>First, <a href="http://beta.openbadges.org/displayer/convert/email" target="_new">go get your User ID</a> from the Mozilla Open Badge Infrastructure!</p>
-
-<p>(Hint - it's a number.)</p>
-
-<p>Enter your number here <input type="text" name="user"> and <input type="submit" value ="Continue >>>"></p>
+<p>Start by entering your email address: <input type="text" name="email"><input type="submit" value ="Continue >>>"></p>
 </form>
 
 <script type="text/javascript">
