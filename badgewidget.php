@@ -1,7 +1,10 @@
-<html>
+<?php include('inc/header.php'); ?>
 <body onload="loadBadges();">
-<img src="./bwh.png" align="right" />
-<p>Here's what your badge widget will look like!</p>
+<div class="container-narrow">
+<div class="masthead">
+	<img src="./bwh.png" align="right" />
+	<h1 class="muted">Here's what your badge widget looks like!</h3>
+</div>
 
 <div id="preview">. . .</div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -40,14 +43,11 @@ echo 'var widgetcode = "<table>"';
 }
 </script>
 
-<p>
-Embed this code anywhere you want your badges to appear:<br /><br />
+<p>Embed this code anywhere you want your badges to appear:</p>
 
-<textarea cols=50 rows=20>
+<textarea rows=20 cols=40>
 <div id="bhwidget">. . .</div>
-
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>    
-
 <script type="text/javascript">
 
 <?php echo 'var url = "http://beta.openbadges.org/displayer/' . $user . '/group/' . $group . '.json";'; ?>
@@ -75,20 +75,7 @@ Embed this code anywhere you want your badges to appear:<br /><br />
     );
 </script>
 </textarea>
-
 </p>
 </form>
-
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-30946847-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-</body>
-</html>
+</div>
+<?php include('inc/footer.php'); ?>
