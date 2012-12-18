@@ -31,7 +31,7 @@ echo 'var widgetcode = "<table>"';
                 widgetcode = widgetcode + "<a href='" + assertUrl + "'><img src='"+imgUrl+"' width='50' height='50' border='0'/></a><br /><a href='" + critUrl + "'>" + badgeName + "</a>";                
                 widgetcode = widgetcode + "</td></tr>";
                 i = i+1;
-                if (i === data.badges.length || i === 3) {
+                if (i === data.badges.length || i === 4) {
                 widgetcode = widgetcode + "</table>";
                 document.getElementById("preview").innerHTML=widgetcode;
                 return;
@@ -65,7 +65,7 @@ echo 'var widgetcode = "<table>"';
                 widgetcode = widgetcode + "<a href='" + assertUrl + "'><img src='"+imgUrl+"' width='50' height='50' border='0'/></a><br /><a href='" + critUrl + "'>" + badgeName + "</a>";                
                 widgetcode = widgetcode + "</td></tr>";
                 i = i+1;
-                    if (i === data.badges.length || i === 3) {
+                    if (i === data.badges.length || i === 4) {
                     widgetcode = widgetcode + "</table>";
                     document.getElementById("bhwidget").innerHTML=widgetcode;
                     return;
