@@ -26,7 +26,9 @@ echo 'var widgetcode = "<table>"';
                 widgetcode = widgetcode + "<tr><td align='center'>";
                 badgeName = data.badges[i].assertion.badge.name;
                 imgUrl = data.badges[i].assertion.badge.image;
-                critUrl = data.badges[i].assertion.badge.criteria;
+  			if (imgUrl.indexOf("http") == -1)
+				{ imgUrl = data.badges[i].assertion.badge.issuer.origin + imgUrl; }
+  		critUrl = data.badges[i].assertion.badge.criteria;
                 assertUrl = data.badges[i].hostedUrl;
                 widgetcode = widgetcode + "<a href='" + assertUrl + "'><img src='"+imgUrl+"' width='50' height='50' border='0'/></a><br /><a href='" + critUrl + "'>" + badgeName + "</a>";                
                 widgetcode = widgetcode + "</td></tr>";
