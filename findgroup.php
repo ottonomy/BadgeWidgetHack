@@ -15,13 +15,13 @@ function badgewidgethack_convert_email_to_openbadges_id($email) {
 	);
 
 	$context  = stream_context_create($opts);
-	$emailjson = file_get_contents('http://beta.openbadges.org/displayer/convert/email', false, $context);
+	$emailjson = file_get_contents('https://backpack.openbadges.org/displayer/convert/email', false, $context);
 	$emaildata = json_decode($emailjson);
 	return $emaildata->userId;
 }
 
 function badgewidget_return_groups_given_badge_id($userid) {
-	$url = "http://beta.openbadges.org/displayer/" . $userid . "/groups.json";
+	$url = "https://backpack.openbadges.org/displayer/" . $userid . "/groups.json";
 	$groupjson = file_get_contents($url);
 	$groupdata = json_decode($groupjson,true);
 	return $groupdata;

@@ -14,7 +14,7 @@ function loadBadges() {
 <?php
 $user = $_POST["user"];
 list($group,$name) = explode(".",$_POST["group"]);
-echo 'var url = "http://beta.openbadges.org/displayer/' . $user . '/group/' . $group . '.json";';
+echo 'var url = "https://backpack.openbadges.org/displayer/' . $user . '/group/' . $group . '.json";';
 echo 'var widgetcode = "<table>"';
 ?>
     
@@ -52,7 +52,7 @@ echo 'var widgetcode = "<table>"';
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>    
 <script type="text/javascript">
 
-<?php echo 'var url = "http://beta.openbadges.org/displayer/' . $user . '/group/' . $group . '.json";'; ?>
+<?php echo 'var url = "https://backpack.openbadges.org/displayer/' . $user . '/group/' . $group . '.json";'; ?>
 
     $.getJSON(url,
         function(data) {
